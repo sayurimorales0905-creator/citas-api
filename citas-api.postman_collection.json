@@ -1,0 +1,301 @@
+{
+  "info": {
+    "_postman_id": "721e1b92-ca5c-4bb5-9160-51ecc96f163d",
+    "name": "citas-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54084686"
+  },
+  "item": [
+    {
+      "name": "rama 1 · login y servicios",
+      "item": [
+        {
+          "name": "Prueba 8. Servicios: listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Prueba 9. Servicios: activos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios/activos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "activos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Prueba 10. Servicios: buscar por título",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/servicios/buscar?titulo=terapia",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "buscar"
+              ],
+              "query": [
+                {
+                  "key": "titulo",
+                  "value": "terapia"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prueba 11. Obtener servicio 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/servicios/1 ",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "1 "
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prueba 12. Obtener servicio inexistente",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/servicios/999",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prueba 13. Crear servicio",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"titulo\": \"Reflexología\",\r\n  \"descripcion\": \"Masaje en puntos de los pies\",\r\n  \"costo\": 85.0,\r\n  \"duracion\": 40,\r\n  \"foto\": null,\r\n  \"activo\": true\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/servicios",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "servicios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prueba 14. Crear título repetido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prueba 15. Crear con datos inválidos",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"titulo\": \"\",\r\n  \"costo\": -5,\r\n  \"duracion\": 5\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/servicios",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "servicios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prueba 16. Actualizar el servicio creado",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"titulo\": \"Masaje de prueba SENATI 2026\",\r\n  \"descripcion\": \"Servicio creado para realizar las pruebas de Postman\",\r\n  \"costo\": 90.0,\r\n  \"duracion\": 40,\r\n  \"foto\": null,\r\n  \"activo\": false\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/servicios/12",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "servicios",
+            "12"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prueba 17. Actualizar servicio inexistente",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"titulo\": \"Reflexología\",\r\n  \"descripcion\": \"Masaje en puntos de los pies\",\r\n  \"costo\": 85.0,\r\n  \"duracion\": 40,\r\n  \"foto\": null,\r\n  \"activo\": true\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/servicios/999",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prueba 18. Eliminar servicio en uso",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/servicios/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prueba 19. Eliminar el servicio creado",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/servicios/9",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "9"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prueba 20. Eliminar nuevamente el mismo servicio",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/servicios/9",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "9"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
